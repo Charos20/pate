@@ -87,6 +87,8 @@ export class PruebaProducto {
     this._afirmar(producto.rif === 'J-123456-7', 'El RIF del fabricante coincide con J-123456-7');
     this._afirmar(producto.registroSanitario.includes('A-144.410'), 'El registro sanitario S.A.C.S. contiene N° A-144.410');
     this._afirmar(producto.trazabilidad.numeroLote === 'T22G250800', 'El lote por defecto es el de la etiqueta T22G250800');
+    this._afirmar(producto.mision.includes('hígado de pollo'), 'La misión institucional incluye hígado de pollo y calidad');
+    this._afirmar(producto.vision.includes('derivados avícolas'), 'La visión institucional proyecta liderazgo en derivados avícolas');
   }
 }
 
