@@ -16,13 +16,14 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 @media (min-width: 920px) {
   .grilla-hero {
     grid-template-columns: 460px 1fr;
     gap: 2rem;
+    align-items: start;
   }
 }
 
@@ -37,9 +38,9 @@
   border: 1px solid rgba(232, 198, 112, 0.35);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
-  gap: 1.5rem;
+  gap: 1.25rem;
   animation: deslizarEntrada 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -123,47 +124,195 @@
   margin-bottom: 1.25rem;
 }
 
-/* Bloques de Misión y Visión Oficiales en la Cabecera Sombreada */
-.bloque-mision-vision {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  background: rgba(0, 0, 0, 0.18);
+/* Insignias Rápidas de Cualidades en la Cabecera */
+.insignias-caracteristicas-rapidas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.insignia-calidad {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-tapa-dorada-brillo);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.75rem;
+  border-radius: 1rem;
   border: 1px solid rgba(232, 198, 112, 0.25);
-  border-radius: 1.15rem;
-  padding: 1.15rem 1.25rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  letter-spacing: 0.03em;
 }
 
-@media (min-width: 760px) {
-  .bloque-mision-vision {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
+/* Sección Institucional Destacada de Misión y Visión */
+.seccion-mision-vision-destacada {
+  margin-top: 0.5rem;
+  animation: deslizarEntrada 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.item-mision-vision {
+.tarjeta-filosofia {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(254, 250, 245, 0.95));
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  border-radius: 1.5rem;
+  padding: 2.25rem 2rem;
+  box-shadow: var(--sombra-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-filosofia::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-marca-magenta) 0%, var(--color-tapa-dorada) 50%, var(--color-marca-burdeos-titulo) 100%);
+}
+
+.tarjeta-filosofia__cabecera {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  border-left: 3px solid var(--color-tapa-dorada-brillo);
-  padding-left: 0.85rem;
 }
 
-.item-mision-vision__titulo {
+.tarjeta-filosofia__etiquetas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tarjeta-filosofia__insignia {
+  background-color: var(--color-marca-burdeos-suave);
+  color: var(--color-marca-burdeos-titulo);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
   font-size: var(--tamano-xs);
   font-weight: var(--peso-extra);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-tapa-dorada-brillo);
+  border: 1px solid rgba(139, 29, 65, 0.2);
 }
 
-.item-mision-vision__texto {
+.tarjeta-filosofia__fabricante {
   font-size: var(--tamano-xs);
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-texto-secundario);
+  font-weight: var(--peso-seminegrita);
+}
+
+.tarjeta-filosofia__titulo {
+  font-family: var(--fuente-titulos);
+  font-size: var(--tamano-xl);
+  color: var(--color-marca-burdeos-titulo);
+  font-weight: var(--peso-extra);
+  line-height: var(--linea-apretada);
+  margin-top: 0.25rem;
+}
+
+.tarjeta-filosofia__subtitulo {
+  font-size: var(--tamano-sm);
+  color: var(--color-texto-secundario);
+  line-height: var(--linea-comoda);
+}
+
+.grilla-filosofia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 860px) {
+  .grilla-filosofia {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.tarjeta-declaracion {
+  background: #ffffff;
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: 1.15rem;
+  padding: 1.5rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--sombra-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-declaracion:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+}
+
+.tarjeta-declaracion--mision {
+  border-left: 4px solid var(--color-marca-magenta);
+}
+
+.tarjeta-declaracion--vision {
+  border-left: 4px solid var(--color-tapa-dorada);
+}
+
+.tarjeta-declaracion__encabezado {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.tarjeta-declaracion__icono-caja {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tarjeta-declaracion--mision .tarjeta-declaracion__icono-caja {
+  background-color: var(--color-fondo-coral-suave);
+  color: var(--color-marca-magenta);
+}
+
+.tarjeta-declaracion--vision .tarjeta-declaracion__icono-caja {
+  background-color: rgba(212, 160, 23, 0.12);
+  color: var(--color-tapa-dorada);
+}
+
+.tarjeta-declaracion__icono {
+  width: 1.4rem;
+  height: 1.4rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tarjeta-declaracion__subetiqueta {
+  font-size: var(--tamano-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: var(--peso-extra);
+  color: var(--color-texto-atenuado);
+  display: block;
+}
+
+.tarjeta-declaracion__titulo {
+  font-size: var(--tamano-base);
+  font-weight: var(--peso-extra);
+  color: var(--color-marca-burdeos-titulo);
+}
+
+.tarjeta-declaracion__cuerpo {
+  font-size: var(--tamano-sm);
+  color: var(--color-texto-primario);
+  line-height: 1.65;
   font-style: italic;
+  margin: 0;
 }
 
 /* Fila de Especificaciones Rápidas en el Hero */
