@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+:root {
+  /* Identidad Cromática Oficial "EL ROJITO" (Extraída de la Etiqueta y Fotografía) */
+  --color-marca-magenta: #cf2769;
+  --color-marca-magenta-oscuro: #9e144a;
+  --color-marca-magenta-claro: #fbebf2;
+  --color-marca-rojo-empaque: #c9141d;
+  --color-marca-burdeos-titulo: #380c14;
+
+  /* Acentos de Tapa Dorada y Fondo Salmón Terracota */
+  --color-tapa-dorada: #cfa347;
+  --color-tapa-dorada-brillo: #e8c670;
+  --color-fondo-coral-suave: #f6ede8;
+  --color-fondo-coral-acento: #ea7a65;
+  --color-fondo-pagina: #faf8f5;
+
+  /* Superficies y Tarjetas de Alta Gama */
+  --color-fondo-tarjeta: #ffffff;
+  --color-fondo-cristal: rgba(255, 255, 255, 0.92);
+  --color-borde-cristal: rgba(207, 39, 105, 0.15);
+  --color-borde-sutil: #ebdcd6;
+  --color-borde-dorado: rgba(207, 163, 71, 0.35);
+
+  /* Tipografía y Textos */
+  --color-texto-principal: #2d1e21;
+  --color-texto-secundario: #6e555b;
+  --color-texto-atenuado: #967d84;
+  --color-texto-blanco: #ffffff;
+  --color-texto-marca: #cf2769;
+
+  /* Canales Sociales y Sanitarios */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-fondo: #eafaf1;
+  --color-instagram: #e1306c;
+  --color-instagram-fondo: #fdeef4;
+
+  --color-lote-exito: #15803d;
+  --color-lote-fondo: #f0fdf4;
+  --color-alerta-texto: #b45309;
+  --color-alerta-fondo: #fffbeb;
+  --color-peligro-texto: #b91c1c;
+  --color-peligro-fondo: #fef2f2;
+
+  /* Sombras y Elevaciones Finas */
+  --sombra-sm: 0 2px 8px rgba(56, 12, 20, 0.05);
+  --sombra-md: 0 8px 20px rgba(56, 12, 20, 0.08);
+  --sombra-lg: 0 16px 36px rgba(56, 12, 20, 0.12);
+  --sombra-magenta: 0 8px 25px rgba(207, 39, 105, 0.22);
+  --sombra-dorada: 0 6px 20px rgba(207, 163, 71, 0.25);
+}

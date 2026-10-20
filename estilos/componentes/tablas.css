@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+.tabla-nutricional {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--texto-sm);
+  margin-top: 0.5rem;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  border: 1px solid var(--color-borde-sutil);
+}
+
+.tabla-nutricional th,
+.tabla-nutricional td {
+  padding: 0.68rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-borde-sutil);
+}
+
+.tabla-nutricional th {
+  background-color: var(--color-dorado-fondo);
+  font-size: var(--texto-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--espaciado-rastreo-amplio);
+  color: var(--color-texto-dorado);
+  font-weight: var(--peso-negrita);
+}
+
+.tabla-nutricional th:last-child,
+.tabla-nutricional td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabla-nutricional tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-nutricional tr:hover td {
+  background-color: rgba(200, 157, 71, 0.04);
+}
+
+.tabla-nutricional__fila-destacada td {
+  background-color: rgba(200, 157, 71, 0.12) !important;
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario-lujo);
+}
+
+.tabla-nutricional__insignia-nutriente {
+  display: inline-block;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  margin-left: 0.4rem;
+  font-weight: var(--peso-medio);
+}
+
+/* Lista de Ingredientes Finos */
+.lista-ingredientes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: var(--texto-sm);
+  color: var(--color-texto-cuerpo);
+}
+
+.lista-ingredientes__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  line-height: var(--altura-linea-comoda);
+}
+
+.lista-ingredientes__punto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-dorado-lujo);
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+/* Etiquetas de Alérgenos */
+.contenedor-alergenos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.alergeno-insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--color-peligro-fondo);
+  color: var(--color-peligro-texto);
+  border: 1px solid var(--color-peligro-borde);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.65rem;
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-seminegrita);
+  transition: transform 0.2s ease;
+}
+
+.alergeno-insignia:hover {
+  transform: translateY(-1px);
+}
+
+.alergeno-insignia__icono {
+  width: 0.95rem;
+  height: 0.95rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}

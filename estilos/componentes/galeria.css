@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+/* Vitrina Visual del Producto "EL ROJITO" */
+.vitrina-producto {
+  background: var(--color-fondo-cristal);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-borde-cristal);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  box-shadow: var(--sombra-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Marco de Imagen Principal */
+.vitrina-producto__marco {
+  position: relative;
+  width: 100%;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-fondo-coral-suave), #ffffff);
+  border: 1px solid var(--color-borde-sutil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+@media (min-width: 880px) {
+  .vitrina-producto__marco {
+    min-height: 340px;
+  }
+}
+
+.vitrina-producto__imagen {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vitrina-producto:hover .vitrina-producto__imagen {
+  transform: scale(1.025);
+}
+
+/* Banderín de Contenido Neto 180 g (Inspirado en la Etiqueta Oficial) */
+.banderin-peso {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--color-marca-rojo-empaque);
+  color: #ffffff;
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.65rem;
+  box-shadow: var(--sombra-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 10;
+}
+
+.banderin-peso__etiqueta {
+  font-size: 0.65rem;
+  font-weight: var(--peso-seminegrita);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.banderin-peso__gramaje {
+  font-size: 1.15rem;
+  font-weight: var(--peso-extra);
+}
+
+.banderin-peso__cpe {
+  font-size: 0.6rem;
+  opacity: 0.9;
+}
+
+/* Selector de Vistas de Fotografía (Frascos vs Etiqueta Extendida) */
+.selector-galeria {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.selector-galeria__boton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: 0.75rem;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-texto-secundario);
+  background-color: rgba(207, 39, 105, 0.05);
+  border: 1px solid var(--color-borde-sutil);
+  transition: all 0.2s ease;
+}
+
+.selector-galeria__boton:hover {
+  background-color: rgba(207, 39, 105, 0.1);
+  color: var(--color-marca-magenta);
+}
+
+.selector-galeria__boton--activo {
+  background-color: var(--color-marca-magenta-claro);
+  border-color: var(--color-marca-magenta);
+  color: var(--color-marca-magenta);
+  font-weight: var(--peso-negrita);
+}
+
+/* Botones de Contacto Directo WhatsApp e Instagram */
+.barra-contacto-rapido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.boton-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.85rem;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-social:hover {
+  transform: translateY(-2px);
+}
+
+.boton-social--whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.boton-social--instagram {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.35);
+}

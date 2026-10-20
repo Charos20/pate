@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+:root {
+  /* Familias Tipográficas */
+  --fuente-marca: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --fuente-tecnica: 'JetBrains Mono', monospace;
+
+  /* Escala Tipográfica Cómoda y Legible */
+  --tamano-xs: 0.8rem;        /* 13.6px - Antes 12px */
+  --tamano-sm: 0.92rem;       /* 15.6px - Antes 13.6px */
+  --tamano-base: 1.02rem;     /* 17.3px - Antes 15.2px */
+  --tamano-md: 1.15rem;       /* 19.5px - Antes 16.8px */
+  --tamano-lg: 1.35rem;       /* 23px - Antes 20px */
+  --tamano-xl: 1.65rem;       /* 28px - Antes 24.8px */
+  --tamano-2xl: 2.25rem;      /* 38px */
+  --tamano-3xl: 2.9rem;       /* 49px */
+
+  /* Pesos */
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-seminegrita: 600;
+  --peso-negrita: 700;
+  --peso-extra: 800;
+
+  /* Interlineados */
+  --linea-ajustada: 1.18;
+  --linea-comoda: 1.6;
+  --linea-amplia: 1.75;
+}

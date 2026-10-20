@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+.tarjeta-modulo {
+  background: var(--color-fondo-cristal);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-borde-cristal);
+  border-radius: 1.25rem;
+  padding: 1.4rem;
+  box-shadow: var(--sombra-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.tarjeta-modulo:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+  border-color: rgba(207, 39, 105, 0.3);
+}
+
+.tarjeta-modulo__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(207, 39, 105, 0.15);
+  padding-bottom: 0.85rem;
+  gap: 0.5rem;
+}
+
+.tarjeta-modulo__titulo-grupo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.tarjeta-modulo__icono-svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: var(--color-marca-magenta);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.tarjeta-modulo__titulo {
+  font-family: var(--fuente-marca);
+  font-size: var(--tamano-lg);
+  font-weight: var(--peso-negrita);
+  color: var(--color-marca-burdeos-titulo);
+}
+
+.tarjeta-modulo__campo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0.5rem;
+  border-bottom: 1px solid var(--color-borde-sutil);
+  font-size: var(--tamano-sm);
+  transition: background-color 0.2s ease;
+}
+
+.tarjeta-modulo__campo:hover {
+  background-color: var(--color-marca-magenta-claro);
+}
+
+.tarjeta-modulo__campo:last-child {
+  border-bottom: none;
+}
+
+.tarjeta-modulo__etiqueta {
+  color: var(--color-texto-secundario);
+  font-weight: var(--peso-medio);
+}
+
+.tarjeta-modulo__valor {
+  color: var(--color-texto-principal);
+  font-weight: var(--peso-seminegrita);
+  text-align: right;
+}
+
+/* Cajas de Alerta Sanitaria */
+.alerta-caja {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.85rem;
+  padding: 0.9rem 1.1rem;
+  font-size: var(--tamano-sm);
+  line-height: var(--linea-comoda);
+}
+
+.alerta-caja__icono {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.alerta-caja--exito {
+  background-color: var(--color-lote-fondo);
+  border: 1px solid rgba(21, 128, 61, 0.25);
+  color: var(--color-lote-exito);
+}
+
+.alerta-caja--advertencia {
+  background-color: var(--color-alerta-fondo);
+  border: 1px solid rgba(180, 83, 9, 0.25);
+  color: var(--color-alerta-texto);
+}
+
+.alerta-caja--peligro {
+  background-color: var(--color-peligro-fondo);
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  color: var(--color-peligro-texto);
+}
+
+/* Sellos de Calidad y Registro Sanitario */
+.cuadricula-sellos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+}
+
+.sello-item {
+  background: linear-gradient(145deg, #ffffff, var(--color-marca-magenta-claro));
+  border: 1px solid rgba(207, 39, 105, 0.2);
+  border-radius: 1rem;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--sombra-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sello-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-marca-magenta);
+}
+
+.sello-item__icono-svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  stroke: var(--color-marca-magenta);
+  stroke-width: 1.8;
+  fill: none;
+}
+
+.sello-item__texto {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-marca-burdeos-titulo);
+  line-height: 1.3;
+}

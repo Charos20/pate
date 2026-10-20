@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* Barra de Navegación por Pestañas Adaptativa */
+.navegacion-pestanas {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.45rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-borde-cristal);
+  box-shadow: var(--sombra-sm);
+  position: sticky;
+  top: 0.75rem;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+@media (min-width: 760px) {
+  .navegacion-pestanas {
+    display: flex;
+    flex-direction: row;
+    gap: 0.35rem;
+    padding: 0.35rem;
+  }
+}
+
+.boton-pestana {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 0.65rem;
+  font-size: var(--tamano-sm);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-texto-secundario);
+  text-align: center;
+  border-radius: 0.9rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+@media (min-width: 760px) {
+  .boton-pestana {
+    flex: 1;
+    font-size: var(--tamano-xs);
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+.boton-pestana__icono {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.boton-pestana:hover {
+  color: var(--color-marca-magenta);
+  background-color: var(--color-marca-magenta-claro);
+}
+
+.boton-pestana:hover .boton-pestana__icono {
+  transform: translateY(-1px);
+}
+
+.boton-pestana--activo {
+  background: linear-gradient(135deg, var(--color-marca-burdeos-titulo), var(--color-marca-magenta));
+  color: #ffffff !important;
+  box-shadow: var(--sombra-magenta);
+  font-weight: var(--peso-negrita);
+}
+
+.boton-pestana--activo .boton-pestana__icono {
+  stroke: var(--color-tapa-dorada-brillo);
+}
+
+/* Paneles de Contenido con Transición */
+.seccion-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.seccion-panel--visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  opacity: 1;
+  transform: translateY(0);
+  animation: desvanecerEntrada 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes desvanecerEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
