@@ -11,7 +11,7 @@
   gap: 1.75rem;
 }
 
-/* Grilla Superior Dividida para Escritorio (Showcase a la izquierda, Hero a la derecha) */
+/* Grilla Superior Dividida para Escritorio */
 .grilla-hero {
   display: grid;
   grid-template-columns: 1fr;
@@ -19,26 +19,27 @@
   align-items: stretch;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 920px) {
   .grilla-hero {
     grid-template-columns: 460px 1fr;
     gap: 2rem;
   }
 }
 
-/* Cabecera Hero Oficial EL ROJITO */
+/* Cabecera Hero Oficial EL ROJITO con Fondo Rojo / Burdeos Sombreado */
 .cabecera-producto {
   position: relative;
-  background: linear-gradient(145deg, var(--color-marca-burdeos-titulo) 0%, var(--color-marca-magenta-oscuro) 70%, var(--color-marca-magenta) 100%);
+  background: linear-gradient(145deg, var(--color-marca-burdeos-titulo) 0%, var(--color-marca-magenta-oscuro) 65%, var(--color-marca-magenta) 100%);
   color: var(--color-texto-blanco);
   border-radius: 1.5rem;
   padding: 2.25rem 2rem;
   box-shadow: var(--sombra-lg);
-  border: 1px solid rgba(232, 198, 112, 0.3);
+  border: 1px solid rgba(232, 198, 112, 0.35);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  gap: 1.5rem;
   animation: deslizarEntrada 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -47,9 +48,9 @@
   position: absolute;
   top: -80px;
   right: -80px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(232, 198, 112, 0.22) 0%, transparent 70%);
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(232, 198, 112, 0.25) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -59,7 +60,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .cabecera-producto__insignia {
@@ -106,10 +107,10 @@
   font-size: var(--tamano-2xl);
   font-weight: var(--peso-negrita);
   line-height: var(--linea-ajustada);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
-@media (min-width: 880px) {
+@media (min-width: 920px) {
   .cabecera-producto__titulo {
     font-size: var(--tamano-3xl);
   }
@@ -117,9 +118,52 @@
 
 .cabecera-producto__subtitulo {
   font-size: var(--tamano-base);
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   line-height: var(--linea-comoda);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Bloques de Misión y Visión Oficiales en la Cabecera Sombreada */
+.bloque-mision-vision {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(232, 198, 112, 0.25);
+  border-radius: 1.15rem;
+  padding: 1.15rem 1.25rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (min-width: 760px) {
+  .bloque-mision-vision {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.item-mision-vision {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-left: 3px solid var(--color-tapa-dorada-brillo);
+  padding-left: 0.85rem;
+}
+
+.item-mision-vision__titulo {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-extra);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-tapa-dorada-brillo);
+}
+
+.item-mision-vision__texto {
+  font-size: var(--tamano-xs);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
 }
 
 /* Fila de Especificaciones Rápidas en el Hero */

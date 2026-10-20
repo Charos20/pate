@@ -1,6 +1,5 @@
 import { ServicioProducto } from '../../aplicacion/servicios/ServicioProducto.js';
 import { VistaTrazabilidad } from '../vistas/VistaTrazabilidad.js';
-import { VistaNutricion } from '../vistas/VistaNutricion.js';
 import { VistaSeguridad } from '../vistas/VistaSeguridad.js';
 import { VistaMarca } from '../vistas/VistaMarca.js';
 
@@ -18,7 +17,6 @@ export class ControladorPrincipal {
     this._servicioProducto = new ServicioProducto();
 
     this._vistaTrazabilidad = null;
-    this._vistaNutricion = null;
     this._vistaSeguridad = null;
     this._vistaMarca = null;
 
@@ -51,7 +49,6 @@ export class ControladorPrincipal {
    */
   _capturarElementosDom() {
     this._contenedorTrazabilidad = this._documento.getElementById('panel-trazabilidad');
-    this._contenedorNutricion = this._documento.getElementById('panel-nutricion');
     this._contenedorSeguridad = this._documento.getElementById('panel-seguridad');
     this._contenedorMarca = this._documento.getElementById('panel-marca');
 
@@ -59,6 +56,8 @@ export class ControladorPrincipal {
     this._elementoDescripcionProducto = this._documento.getElementById('descripcion-producto');
     this._elementoLoteInsignia = this._documento.getElementById('insignia-lote-actual');
     this._elementoMarcaEtiqueta = this._documento.getElementById('marca-etiqueta');
+    this._elementoMisionHero = this._documento.getElementById('hero-mision-texto');
+    this._elementoVisionHero = this._documento.getElementById('hero-vision-texto');
     this._elementoGramajeHero = this._documento.getElementById('hero-gramaje');
     this._elementoTemperaturaHero = this._documento.getElementById('hero-temperatura');
     this._elementoSacsHero = this._documento.getElementById('hero-sacs');
@@ -72,12 +71,11 @@ export class ControladorPrincipal {
   }
 
   /**
-   * Instancia las clases especializadas de vista.
+   * Instancia las clases especializadas de vista activas.
    * @private
    */
   _instanciarVistas() {
     this._vistaTrazabilidad = new VistaTrazabilidad(this._contenedorTrazabilidad);
-    this._vistaNutricion = new VistaNutricion(this._contenedorNutricion);
     this._vistaSeguridad = new VistaSeguridad(this._contenedorSeguridad);
     this._vistaMarca = new VistaMarca(this._contenedorMarca);
   }
@@ -93,7 +91,7 @@ export class ControladorPrincipal {
   }
 
   /**
-   * Renderiza los textos principales de la cabecera y especificaciones rápidas.
+   * Renderiza los textos principales de la cabecera, Misión, Visión y especificaciones rápidas.
    * @param {import('../../dominio/modelos/EntidadProducto.js').EntidadProducto} producto
    * @private
    */
@@ -106,6 +104,12 @@ export class ControladorPrincipal {
     }
     if (this._elementoDescripcionProducto) {
       this._elementoDescripcionProducto.innerHTML = `${producto.descripcion}`;
+    }
+    if (this._elementoMisionHero) {
+      this._elementoMisionHero.innerHTML = `&ldquo;${producto.mision}&rdquo;`;
+    }
+    if (this._elementoVisionHero) {
+      this._elementoVisionHero.innerHTML = `&ldquo;${producto.vision}&rdquo;`;
     }
     if (this._elementoLoteInsignia) {
       this._elementoLoteInsignia.innerHTML = `Lote: ${producto.trazabilidad.numeroLote}`;
@@ -125,15 +129,20 @@ export class ControladorPrincipal {
   }
 
   /**
-   * Ejecuta el renderizado de cada vista especializada.
+   * Ejecuta el renderizado de cada vista especializada activa.
    * @param {import('../../dominio/modelos/EntidadProducto.js').EntidadProducto} producto
    * @private
    */
   _renderizarVistas(producto) {
-    this._vistaTrazabilidad.renderizar(producto.trazabilidad);
-    this._vistaNutricion.renderizar(producto.nutricion);
-    this._vistaSeguridad.renderizar(producto);
-    this._vistaMarca.renderizar(producto);
+    if (this._vistaTrazabilidad) {
+      this._vistaTrazabilidad.renderizar(producto.trazabilidad);
+    }
+    if (this._vistaSeguridad) {
+      this._vistaSeguridad.renderizar(producto);
+    }
+    if (this._vistaMarca) {
+      this._vistaMarca.renderizar(producto);
+    }
   }
 
   /**
@@ -176,7 +185,7 @@ export class ControladorPrincipal {
   }
 
   /**
-   * Configura la interactividad para alternar entre la foto de frascos y la etiqueta.
+   * Configura la interactividad para alternar entre la foto de frascos y el logo oficial.
    * @private
    */
   _enlazarEventosGaleria() {
